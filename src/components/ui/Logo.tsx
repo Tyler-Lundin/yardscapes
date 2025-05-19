@@ -1,5 +1,5 @@
 import React from 'react';
-
+import Image from 'next/image';
 interface LogoProps {
   className?: string;
   size?: 'sm' | 'md' | 'lg' | 'xl';
@@ -29,7 +29,7 @@ export default function Logo({
   return (
     <div className={`flex items-center gap-2 ${className} dark:grayscale dark:invert`}>
       <div className={`${imageSizeClass} flex items-center justify-center relative`}>
-        <img 
+        <Image 
           src="/images/logo.png" 
           alt="YardScapes Logo"
           className="object-contain w-full h-full" // Ensures the logo fits well

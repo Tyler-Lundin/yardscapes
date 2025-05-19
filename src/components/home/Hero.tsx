@@ -36,7 +36,7 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
           >
-            Crafting exceptional landscapes that elevate your property's beauty and value
+            Crafting exceptional landscapes that elevate your property&apos;s beauty and value
           </motion.p>
 
           <motion.div

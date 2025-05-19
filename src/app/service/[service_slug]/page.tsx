@@ -1,11 +1,10 @@
-import { notFound } from 'next/navigation';
 import { SERVICES } from '@/types/services';
-import { IconType } from 'react-icons';
+import { notFound } from 'next/navigation';
 
-interface ServicePageProps {
-  params: {
+interface PageProps {
+  params: Promise<{
     service_slug: string;
-  };
+  }>;
 }
 
 export async function generateStaticParams() {
@@ -14,38 +13,59 @@ export async function generateStaticParams() {
   }));
 }
 
-export default function ServicePage({ params }: ServicePageProps) {
-  const service = SERVICES.find((s) => s.slug === params.service_slug);
+export default async function ServicePage({ params }: PageProps) {
+  const service = SERVICES.find(async (s) => s.slug === (await params).service_slug);
 
   if (!service) {
     notFound();
   }
 
-  const Icon = service.icon as IconType;
 
   return (
     <main className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="relative h-[60vh] bg-gray-900">
+      <section className="relative py-20 bg-gray-900">
         <div className="absolute inset-0 bg-black/50 z-10" />
-        <div className="relative z-20 container mx-auto px-4 h-full flex items-center">
-          <div className="max-w-3xl">
-            <div className="flex items-center gap-4 mb-6">
-              <Icon className={`text-4xl ${service.iconClassName}`} />
-              <h1 className="text-5xl font-serif font-bold text-white">
-                {service.title}
-              </h1>
-            </div>
-            <p className="text-xl text-gray-200 mb-8">
-              {service.longDescription}
+        <div className="relative z-20 container mx-auto px-4">
+          <div className="max-w-3xl mx-auto text-center">
+            <h1 className="text-5xl font-serif font-bold text-white mb-6">
+              {service.title}
+            </h1>
+            <p className="text-xl text-gray-200">
+              {service.description}
             </p>
-            <div className="flex items-center gap-4 text-white">
-              <div className="px-4 py-2 bg-emerald-600 rounded-full">
-                {service.estimatedTime}
-              </div>
-              <div className="px-4 py-2 bg-emerald-600 rounded-full">
-                {service.category}
-              </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Service Details */}
+      <section className="py-20">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <div className="prose prose-lg">
+              <h2>Overview</h2>
+              <p>{service.description}</p>
+              
+              <h2>What We Offer</h2>
+              <ul>
+                {service.features?.map((feature, index) => (
+                  <li key={index}>{feature}</li>
+                ))}
+              </ul>
+
+              <h2>Process</h2>
+              <ol>
+                {service.process?.map((step, index) => (
+                  <li key={index}>{step}</li>
+                ))}
+              </ol>
+
+              <h2>Why Choose Us</h2>
+              <ul>
+                {service.benefits?.map((benefit, index) => (
+                  <li key={index}>{benefit}</li>
+                ))}
+              </ul>
             </div>
           </div>
         </div>
@@ -61,7 +81,7 @@ export default function ServicePage({ params }: ServicePageProps) {
                   Key Features
                 </h2>
                 <ul className="space-y-4">
-                  {service.features.map((feature, index) => (
+                  {service.features?.map((feature, index) => (
                     <li key={index} className="flex items-center gap-3">
                       <div className="w-2 h-2 bg-emerald-600 rounded-full" />
                       <span className="text-lg text-gray-600">{feature}</span>

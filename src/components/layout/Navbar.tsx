@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
 import Logo from '../ui/Logo';
 
 interface NavProps {
@@ -51,16 +50,11 @@ function LogoContainer({ children, isScrolled }: { children: React.ReactNode; is
 }
 
 function DesktopNav({ isScrolled, minimal }: { isScrolled?: boolean; minimal?: boolean }) {
-    const pathname = usePathname();
     const baseClasses = "hidden lg:flex w-full justify-center space-x-8";
   const fullNavClasses = `${baseClasses} bg-white/75 dark:bg-black/75 backdrop-blur-sm py-1 transition-all duration-300 ${
     isScrolled ? 'opacity-0 -translate-y-20' : 'opacity-100'
   }`;
 
-  function isCurrentLink(sectionType: string) {
-    return pathname === `/${sectionType}`;
-  }
-  
 
   return (
     <div className={minimal ? baseClasses : fullNavClasses}>

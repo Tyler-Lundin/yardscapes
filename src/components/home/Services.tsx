@@ -4,6 +4,7 @@ import { SERVICES as APP_SERVICES, Service } from '@/types/services';
 // You might need to adjust icon imports based on your actual icon library
 // import { IconType } from 'react-icons'; 
 import { useRouter } from 'next/navigation';
+import Image from 'next/image';
 interface ServiceWithImageUrl extends Service { // Extends the existing Service type
   imageUrl: string;
   // If your icon prop in Service type is a React component, it might be typed like:
@@ -33,7 +34,7 @@ export default function Services() {
               className="bg-white rounded-xl shadow-2xl hover:shadow-3xl transition-all duration-300 ease-in-out flex flex-col overflow-hidden group"
             >
               <div className="relative h-56 sm:h-64 w-full overflow-hidden">
-                <img 
+                <Image 
                   src={service.imageUrl} 
                   alt={`Image for ${service.title}`}
                   className="w-full h-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-110"
@@ -49,10 +50,8 @@ export default function Services() {
               <div className="p-5 sm:p-6 flex flex-col flex-grow">
                 <div className="flex items-center mb-3 gap-2">
                   {typeof service.icon === 'function' ? (
-                    // Ensure iconClassName is part of your Service type if you use it this way
-                    <service.icon className={(service as any).iconClassName || 'w-7 h-7 text-green-600'} />
+                    <service.icon className={service.iconClassName || 'w-7 h-7 text-green-600'} />
                   ) : (
-                    // Fallback for string/emoji icons, assuming icon is a string here
                     <span className="text-3xl">{service.icon}</span> 
                   )}
                   <h3 className="text-xl sm:text-2xl font-semibold text-gray-800 group-hover:text-green-600 transition-colors">

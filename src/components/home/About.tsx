@@ -1,6 +1,6 @@
 import { OWNER } from '@/types/owner';
 import Image from 'next/image';
-import { FaAward, FaLeaf, FaCertificate } from 'react-icons/fa';
+import { FaAward, FaLeaf } from 'react-icons/fa';
 
 export default function About() {
   return (
@@ -42,7 +42,7 @@ export default function About() {
             
             <blockquote className="border-l-4 border-emerald-600 pl-6 py-2">
               <p className="text-xl text-gray-700 italic">
-                "{OWNER.quote}"
+                &quot;{OWNER.quote}&quot;
               </p>
             </blockquote>
 
