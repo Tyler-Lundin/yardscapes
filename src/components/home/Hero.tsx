@@ -18,7 +18,7 @@ export default function Hero() {
       <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-black/50 to-transparent" />
 
       {/* Content */}
-      <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center lg:py-20">
+      <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-8 lg:py-20">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
