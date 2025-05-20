@@ -32,6 +32,8 @@ export default function Logo({
         <Image 
           src="/images/logo.png" 
           alt="YardScapes Logo"
+          width={100}
+          height={100}
           className="object-contain w-full h-full" // Ensures the logo fits well
         />
       </div>

@@ -2,7 +2,7 @@ import { OWNER } from '@/types/owner';
 import Image from 'next/image';
 import { FaAward, FaLeaf } from 'react-icons/fa';
 
-export default function About() {
+export default function AboutOwner() {
   return (
     <section id="about" className="py-32 bg-gradient-to-b from-white to-gray-50">
       <div className="container mx-auto px-4">
