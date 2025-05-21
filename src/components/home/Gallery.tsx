@@ -6,7 +6,7 @@ import Link from 'next/link';
 import { GALLERY_IMAGES, GALLERY_CATEGORIES, GalleryCategory } from '@/types/gallery';
 import { useRouter } from 'next/navigation';
 
-export default function Gallery() {
+export default function Gallery({ isHome = false }: { isHome?: boolean }) {
   const [selectedCategory, setSelectedCategory] = useState<GalleryCategory>('all');
   const router = useRouter();
 
@@ -42,7 +42,7 @@ export default function Gallery() {
 
         {/* Gallery Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {filteredImages.map((image) => (
+          {filteredImages.slice(0, isHome ? 5 : undefined).sort((a, b) => a.order - b.order).map((image) => (
             <Link
               key={image.id}
               href={`/service/${image.serviceSlug}`}
@@ -64,7 +64,7 @@ export default function Gallery() {
               </div>
             </Link>
           ))}
-          <button onClick={() => router.push('/gallery')} className="group relative aspect-[4/3] overflow-hidden rounded-lg shadow-lg dark:shadow-neutral-900/50 border-2 border-gray-300 dark:border-neutral-700">
+          <button onClick={() => router.push('/gallery')} className="group cursor-pointer hover:scale-105 transition-transform duration-300 relative aspect-[4/3] overflow-hidden rounded-lg shadow-lg dark:shadow-neutral-900/50 border-2 border-gray-300 dark:border-neutral-700">
             <div className="absolute inset-0 grid place-items-center transition-opacity duration-300">
                 <h3 className="text-xl font-bold mb-2">View All</h3>
             </div>

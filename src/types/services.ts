@@ -29,7 +29,7 @@ export const SERVICES: Service[] = [
     features: ["Driveway Installation", "Patio Construction", "Foundation Work", "Concrete Repair"],
     estimatedTime: "2-5 days",
     slug: "concrete-work",
-    imageUrl: "/images/gallery/concrete-work.jpg",
+    imageUrl: "/images/gallery/IMG_0309.jpeg",
     longDescription: "Our concrete work services combine technical expertise with artistic vision to create durable, beautiful surfaces that enhance your property's value and functionality. From driveways to patios, we ensure every project meets the highest standards of quality and craftsmanship.",
     benefits: [
       "Increased property value",
@@ -101,7 +101,7 @@ export const SERVICES: Service[] = [
     features: ["Garden Design", "Lawn Maintenance", "Irrigation Systems", "Outdoor Lighting"],
     estimatedTime: "1-2 weeks",
     slug: "landscaping",
-    imageUrl: "/images/gallery/landscaping-service.jpeg",
+    imageUrl: "/images/gallery/IMG_0217.jpeg",
     longDescription: "Create your perfect outdoor oasis with our comprehensive landscaping services. We combine artistic vision with horticultural expertise to design and maintain beautiful, functional outdoor spaces.",
     benefits: [
       "Enhanced curb appeal",
