@@ -49,6 +49,16 @@ export default function Footer() {
         <div className="border-t border-gray-200 dark:border-gray-800 mt-8 pt-8 text-center text-gray-500 dark:text-gray-500">
           <p>&copy; {new Date().getFullYear()} {COMPANY.name}. All rights reserved.</p>
           <p className="text-sm mt-2">Founded {COMPANY.founded}</p>
+          <p className="text-xs mt-4 font-light">
+            <a 
+              href="http://www.tylerlundin.me/about" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-yellow-600 dark:text-yellow-500 hover:text-yellow-700 dark:hover:text-yellow-400 transition-colors"
+            >
+              Designed & Developed by Tyler Lundin
+            </a>
+          </p>
         </div>
       </div>
     </footer>
