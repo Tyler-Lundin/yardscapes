@@ -1,5 +1,8 @@
+'use client';
+
 import { SERVICES } from '@/types/services';
-import { notFound } from 'next/navigation';
+import { notFound, useRouter } from 'next/navigation';
+import { use } from 'react';
 
 interface PageProps {
   params: Promise<{
@@ -7,119 +10,135 @@ interface PageProps {
   }>;
 }
 
-export async function generateStaticParams() {
-  return SERVICES.map((service) => ({
-    service_slug: service.slug,
-  }));
-}
-
-export default async function ServicePage({ params }: PageProps) {
-  const service = SERVICES.find(async (s) => s.slug === (await params).service_slug);
+export default function ServicePage({ params: paramsPromise }: PageProps) {
+  const params = use(paramsPromise);
+  const service = SERVICES.find((s) => s.slug === params.service_slug);
+  const router = useRouter();
 
   if (!service) {
     notFound();
   }
 
-
   return (
-    <main className="min-h-screen bg-white">
+    <main className="min-h-screen bg-white dark:bg-black">
       {/* Hero Section */}
-      <section className="relative py-20 bg-gray-900">
-        <div className="absolute inset-0 bg-black/50 z-10" />
+      <section className="relative py-20 bg-gray-100 dark:bg-neutral-900">
+        <div className="absolute inset-0 bg-gray-900/30 dark:bg-black/50 z-10" />
         <div className="relative z-20 container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
-            <h1 className="text-5xl font-serif font-bold text-white mb-6">
+            <h1 className="text-5xl font-serif font-bold text-black dark:text-white mb-6">
               {service.title}
             </h1>
-            <p className="text-xl text-gray-200">
+            <p className="text-xl text-neutral-700 dark:text-neutral-300">
               {service.description}
             </p>
           </div>
         </div>
       </section>
 
-      {/* Service Details */}
-      <section className="py-20">
+      {/* Back Button */}
+      <section className="py-4 bg-white dark:bg-black">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <div className="prose prose-lg">
-              <h2>Overview</h2>
-              <p>{service.description}</p>
-              
-              <h2>What We Offer</h2>
-              <ul>
-                {service.features?.map((feature, index) => (
-                  <li key={index}>{feature}</li>
-                ))}
-              </ul>
-
-              <h2>Process</h2>
-              <ol>
-                {service.process?.map((step, index) => (
-                  <li key={index}>{step}</li>
-                ))}
-              </ol>
-
-              <h2>Why Choose Us</h2>
-              <ul>
-                {service.benefits?.map((benefit, index) => (
-                  <li key={index}>{benefit}</li>
-                ))}
-              </ul>
-            </div>
-          </div>
+          <button
+            onClick={() => router.push('/services')}
+            className="flex items-center text-emerald-600 dark:text-emerald-400 hover:text-emerald-700 dark:hover:text-emerald-500 transition-colors group"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth={1.5}
+              stroke="currentColor"
+              className="w-5 h-5 mr-2 transform transition-transform group-hover:-translate-x-1"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18"
+              />
+            </svg>
+            Back
+          </button>
         </div>
       </section>
 
-      {/* Features Section */}
-      <section className="py-20">
+      {/* Main Content Area - Two Column Layout on Desktop */}
+      <section className="py-12 md:py-20">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-            <div className="space-y-8">
-              <div>
-                <h2 className="text-3xl font-serif font-bold text-gray-900 mb-6">
-                  Key Features
-                </h2>
-                <ul className="space-y-4">
-                  {service.features?.map((feature, index) => (
-                    <li key={index} className="flex items-center gap-3">
-                      <div className="w-2 h-2 bg-emerald-600 rounded-full" />
-                      <span className="text-lg text-gray-600">{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+          <div className="grid grid-cols-1 lg:grid-cols-5 gap-12">
+            
+            {/* Left Column: Service Details (Prose) */}
+            <div className="lg:col-span-3">
+              <div className="bg-neutral-50 dark:bg-neutral-800 p-6 md:p-10 rounded-xl shadow-lg dark:shadow-neutral-900/50">
+                <div className="prose prose-lg dark:prose-invert max-w-none 
+                              prose-headings:font-serif prose-headings:text-black dark:prose-headings:text-white
+                              prose-p:text-neutral-700 dark:prose-p:text-neutral-300
+                              prose-li:text-neutral-700 dark:prose-li:text-neutral-300
+                              prose-strong:text-black dark:prose-strong:text-white">
+                  <h2 className="text-4xl mb-8 !mt-0">Overview</h2> {/* Added !mt-0 to override prose margin */}
+                  <p className="mb-8">{service.description}</p>
+                  
+                  <h2 className="text-3xl mt-12 mb-6">What We Offer</h2>
+                  <ul className="list-disc pl-5 space-y-2 mb-8">
+                    {service.features?.map((feature, index) => (
+                      <li key={index}>{feature}</li>
+                    ))}
+                  </ul>
 
-              <div>
-                <h2 className="text-3xl font-serif font-bold text-gray-900 mb-6">
-                  Benefits
-                </h2>
-                <ul className="space-y-4">
-                  {service.benefits?.map((benefit, index) => (
-                    <li key={index} className="flex items-center gap-3">
-                      <div className="w-2 h-2 bg-emerald-600 rounded-full" />
-                      <span className="text-lg text-gray-600">{benefit}</span>
-                    </li>
-                  ))}
-                </ul>
+                  <h2 className="text-3xl mt-12 mb-6">Why Choose Us</h2>
+                  <ul className="list-disc pl-5 space-y-2 mb-8">
+                    {service.benefits?.map((benefit, index) => (
+                      <li key={index}>{benefit}</li>
+                    ))}
+                  </ul>
+                </div>
               </div>
             </div>
 
-            <div>
-              <h2 className="text-3xl font-serif font-bold text-gray-900 mb-6">
-                Our Process
-              </h2>
-              <div className="space-y-6">
-                {service.process?.map((step, index) => (
-                  <div key={index} className="flex gap-4">
-                    <div className="flex-shrink-0 w-8 h-8 rounded-full bg-emerald-600 text-white flex items-center justify-center font-bold">
-                      {index + 1}
+            {/* Right Column: Key Advantages (Features, Benefits, Process) */}
+            <div className="lg:col-span-2 space-y-10">
+              {/* Our Process Card */}
+              <div className="bg-neutral-50 dark:bg-neutral-800 p-6 md:p-8 rounded-xl shadow-lg dark:shadow-neutral-900/50">
+                <h3 className="text-3xl font-serif font-bold text-black dark:text-white mb-8 text-center">Our Process</h3>
+                <div className="space-y-6">
+                  {service.process?.map((step, index) => (
+                    <div key={index} className="flex items-start gap-4">
+                      <div className="flex-shrink-0 w-10 h-10 rounded-full bg-emerald-600 dark:bg-emerald-500 text-white flex items-center justify-center font-bold text-lg">
+                        {index + 1}
+                      </div>
+                      <div className="pt-1">
+                        <p className="text-neutral-700 dark:text-neutral-300">{step}</p>
+                      </div>
                     </div>
-                    <div>
-                      <p className="text-lg text-gray-600">{step}</p>
-                    </div>
-                  </div>
-                ))}
+                  ))}
+                </div>
+              </div>
+
+              {/* Key Features & Benefits Combined (Optional - can be separate cards too) */}
+              <div className="bg-neutral-50 dark:bg-neutral-800 p-6 md:p-8 rounded-xl shadow-lg dark:shadow-neutral-900/50">
+                 <h3 className="text-3xl font-serif font-bold text-black dark:text-white mb-8 text-center">Highlights</h3>
+                <div>
+                  <h4 className="text-2xl font-semibold text-emerald-600 dark:text-emerald-400 mb-4">Key Features</h4>
+                  <ul className="space-y-3 mb-8">
+                    {service.features?.map((feature, index) => (
+                      <li key={index} className="flex items-start">
+                        <span className="flex-shrink-0 w-2.5 h-2.5 mt-1.5 bg-emerald-600 dark:bg-emerald-500 rounded-full mr-3"></span>
+                        <span className="text-neutral-700 dark:text-neutral-300">{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <div>
+                  <h4 className="text-2xl font-semibold text-emerald-600 dark:text-emerald-400 mb-4">Benefits</h4>
+                  <ul className="space-y-3">
+                    {service.benefits?.map((benefit, index) => (
+                      <li key={index} className="flex items-start">
+                        <span className="flex-shrink-0 w-2.5 h-2.5 mt-1.5 bg-emerald-600 dark:bg-emerald-500 rounded-full mr-3"></span>
+                        <span className="text-neutral-700 dark:text-neutral-300">{benefit}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </div>
             </div>
           </div>
@@ -127,15 +146,15 @@ export default async function ServicePage({ params }: PageProps) {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-12 md:py-20 bg-neutral-100 dark:bg-neutral-800">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-4xl font-serif font-bold text-gray-900 mb-6">
+          <h2 className="text-4xl font-serif font-bold text-black dark:text-white mb-6">
             Ready to Get Started?
           </h2>
-          <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
+          <p className="text-xl text-neutral-700 dark:text-neutral-300 mb-8 max-w-2xl mx-auto">
             Contact us today to schedule a consultation and take the first step towards transforming your space.
           </p>
-          <button className="px-8 py-4 bg-emerald-600 text-white rounded-lg text-lg font-semibold hover:bg-emerald-700 transition-colors">
+          <button className="px-8 py-4 bg-emerald-600 text-white rounded-lg text-lg font-semibold hover:bg-emerald-700 dark:hover:bg-emerald-500 transition-colors">
             Contact Us
           </button>
         </div>

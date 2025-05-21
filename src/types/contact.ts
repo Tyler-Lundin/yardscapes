@@ -24,9 +24,9 @@ export interface ContactFormData {
 }
 
 export const CONTACT_INFO: ContactInfo = {
-  phone: '(555) 123-4567',
-  email: 'info@yardscapes.com',
-  address: '123 Landscaping Way, City, State 12345',
+  phone: '(530) 520-3396',
+  email: 'dean.yardscapes@yahoo.com',
+  address: '874 N Humboldt Ave Willows CA 95988',
   hours: [
     { days: 'Monday - Friday', time: '8:00 AM - 6:00 PM' },
     { days: 'Saturday', time: '9:00 AM - 4:00 PM' },
@@ -35,17 +35,17 @@ export const CONTACT_INFO: ContactInfo = {
   socialMedia: [
     {
       platform: 'Facebook',
-      url: 'https://facebook.com/yardscapes',
+      url: 'https://facebook.com/yardscapes-willows',
       icon: 'facebook'
     },
     {
       platform: 'Instagram',
-      url: 'https://instagram.com/yardscapes',
+      url: 'https://instagram.com/yardscapes-willows',
       icon: 'instagram'
     },
     {
       platform: 'Pinterest',
-      url: 'https://pinterest.com/yardscapes',
+      url: 'https://pinterest.com/yardscapes-willows',
       icon: 'pinterest'
     }
   ]

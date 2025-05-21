@@ -1,15 +1,7 @@
 import Image from 'next/image';
 import { useEffect } from 'react';
 import { FaTimes } from 'react-icons/fa';
-
-interface GalleryImage {
-  id: string;
-  src: string;
-  alt: string;
-  category: string;
-  title: string;
-  description: string;
-}
+import { GalleryImage } from '@/types/gallery';
 
 interface GalleryModalProps {
   image: GalleryImage;

@@ -14,6 +14,7 @@ export interface Service {
   estimatedTime?: string;
   slug: string;
   longDescription?: string;
+  imageUrl: string;
   benefits?: string[];
   process?: string[];
 }
@@ -28,6 +29,7 @@ export const SERVICES: Service[] = [
     features: ["Driveway Installation", "Patio Construction", "Foundation Work", "Concrete Repair"],
     estimatedTime: "2-5 days",
     slug: "concrete-work",
+    imageUrl: "/images/gallery/concrete-work.jpg",
     longDescription: "Our concrete work services combine technical expertise with artistic vision to create durable, beautiful surfaces that enhance your property's value and functionality. From driveways to patios, we ensure every project meets the highest standards of quality and craftsmanship.",
     benefits: [
       "Increased property value",
@@ -51,6 +53,7 @@ export const SERVICES: Service[] = [
     features: ["Wood Fencing", "Metal Fencing", "Privacy Fencing", "Garden Fencing"],
     estimatedTime: "1-3 days",
     slug: "fencing-solutions",
+    imageUrl: "/images/gallery/IMG_6340.jpeg",
     longDescription: "Transform your property with our custom fencing solutions. We offer a wide range of materials and styles to create the perfect balance of security, privacy, and aesthetic appeal for your space.",
     benefits: [
       "Enhanced privacy and security",
@@ -71,9 +74,10 @@ export const SERVICES: Service[] = [
     icon: IoHammerOutline,
     iconClassName: "text-blue-600",
     category: "renovation",
-    features: ["Kitchen Remodeling", "Bathroom Renovation", "Room Additions", "Interior Updates"],
+    features: ["Kitchen Remodeling", "Bathroom Renovation", "Room Additions", "Interior Updates", "Exterior Renovation"],
     estimatedTime: "Varies by project",
     slug: "house-renovations",
+    imageUrl: "/images/gallery/IMG_1550.jpeg",
     longDescription: "Our comprehensive renovation services transform your house into the home of your dreams. We handle everything from kitchen remodels to full home renovations with meticulous attention to detail.",
     benefits: [
       "Increased home value",
@@ -97,6 +101,7 @@ export const SERVICES: Service[] = [
     features: ["Garden Design", "Lawn Maintenance", "Irrigation Systems", "Outdoor Lighting"],
     estimatedTime: "1-2 weeks",
     slug: "landscaping",
+    imageUrl: "/images/gallery/landscaping-service.jpeg",
     longDescription: "Create your perfect outdoor oasis with our comprehensive landscaping services. We combine artistic vision with horticultural expertise to design and maintain beautiful, functional outdoor spaces.",
     benefits: [
       "Enhanced curb appeal",
@@ -120,6 +125,7 @@ export const SERVICES: Service[] = [
     features: ["Wood Decks", "Composite Decks", "Patio Design", "Outdoor Kitchens"],
     estimatedTime: "1-2 weeks",
     slug: "deck-patio",
+    imageUrl: "/images/gallery/IMG_9897.jpeg",
     longDescription: "Extend your living space outdoors with our custom deck and patio solutions. We create beautiful, functional outdoor areas that perfectly complement your home's architecture and your lifestyle.",
     benefits: [
       "Expanded living space",

@@ -13,9 +13,9 @@ export interface Owner {
 export const OWNER: Owner = {
     name: "Dean Milton Martin",
     title: "Founder & Master Craftsman",
-    bio: "With over 10 years of experience in landscape architecture and construction, Dean has established himself as a visionary in creating exceptional outdoor spaces. His journey began with a passion for transforming ordinary spaces into extraordinary environments, combining artistic vision with technical expertise.",
+    bio: "With over 20 years of experience in landscape architecture and construction, Dean has established himself as a visionary in creating exceptional outdoor spaces. His journey began with a passion for transforming ordinary spaces into extraordinary environments, combining artistic vision with technical expertise.",
     quote: "Every project is a canvas where nature meets craftsmanship. We don't just build spaces; we create experiences that enrich lives and stand the test of time.",
-    yearsExperience: 10,
+    yearsExperience: 20,
     achievements: [
         "Master Craftsman Certification",
         "Award-Winning Landscape Designer",

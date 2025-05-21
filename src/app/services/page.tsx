@@ -4,9 +4,9 @@ import { IconType } from 'react-icons';
 
 export default function ServicesPage() {
   return (
-    <main className="min-h-screen bg-white">
+    <main className="min-h-screen bg-white dark:bg-neutral-900">
       {/* Hero Section */}
-      <section className="relative py-20 bg-gray-900">
+      <section className="relative py-20 bg-neutral-900">
         <div className="absolute inset-0 bg-black/50 z-10" />
         <div className="relative z-20 container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
@@ -31,28 +31,28 @@ export default function ServicesPage() {
                 <Link
                   key={service.slug}
                   href={`/service/${service.slug}`}
-                  className="group bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow"
+                  className="group bg-white dark:bg-neutral-800 rounded-lg shadow-lg h-fit overflow-hidden hover:shadow-xl transition-shadow"
                 >
                   <div className="p-8">
                     <div className="flex items-center gap-4 mb-6">
                       <Icon className={`text-4xl ${service.iconClassName}`} />
-                      <h2 className="text-2xl font-serif font-bold text-gray-900">
+                      <h2 className="text-2xl font-serif font-bold text-gray-900 dark:text-white">
                         {service.title}
                       </h2>
                     </div>
-                    <p className="text-gray-600 mb-6">
+                    <p className="text-gray-600 dark:text-white/80 mb-6">
                       {service.description}
                     </p>
                     <div className="flex items-center gap-4">
                       <span className="px-4 py-2 bg-emerald-100 text-emerald-700 rounded-full text-sm font-medium">
                         {service.estimatedTime}
                       </span>
-                      <span className="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-sm font-medium">
+                      <span className="px-4 py-2 bg-neutral-100 text-gray-700 rounded-full text-sm font-medium">
                         {service.category}
                       </span>
                     </div>
                   </div>
-                  <div className="px-8 py-4 bg-gray-50 border-t border-gray-100">
+                  <div className="px-8 py-4 bg-neutral-50 border-t border-gray-100">
                     <div className="flex items-center justify-between text-emerald-600 font-medium">
                       <span>Learn More</span>
                       <span className="group-hover:translate-x-1 transition-transform">→</span>

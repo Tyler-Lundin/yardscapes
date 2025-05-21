@@ -1,15 +1,8 @@
 import Image from 'next/image';
 import { useState } from 'react';
 import GalleryModal from './GalleryModal';
+import { GalleryImage } from '@/types/gallery';
 
-interface GalleryImage {
-  id: string;
-  src: string;
-  alt: string;
-  category: string;
-  title: string;
-  description: string;
-}
 
 interface GalleryGridProps {
   images: GalleryImage[];
@@ -25,7 +18,7 @@ export default function GalleryGrid({ images, selectedCategory }: GalleryGridPro
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      {filteredImages.map((image) => (
+      {filteredImages.sort((a, b) => a.order - b.order).map((image) => (
         <div
           key={image.id}
           className="group relative aspect-[4/3] rounded-xl overflow-hidden cursor-pointer"

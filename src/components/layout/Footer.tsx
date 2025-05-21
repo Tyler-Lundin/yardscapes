@@ -1,5 +1,6 @@
 import Logo from '../ui/Logo';
 import { COMPANY } from '@/types/company';
+import { CONTACT_INFO } from '@/types/contact';
 import Link from 'next/link';
 
 export default function Footer() {
@@ -35,12 +36,12 @@ export default function Footer() {
               </ul>
             </div>
             <div>
-              <h3 className="text-lg font-semibold mb-4">Contact Us</h3>
+              <h3 className="text-lg font-semibold mb-4">Contact Dean</h3>
               <address className="text-gray-600 dark:text-gray-400 not-italic">
                 <p>Willows, CA</p>
                 <p>Glenn County</p>
-                <p className="mt-2">Phone: (555) 123-4567</p>
-                <p>Email: info@yardscapes.com</p>
+                <p className="mt-2">Phone: {CONTACT_INFO.phone}</p>
+                <p>Email: {CONTACT_INFO.email} </p>
               </address>
             </div>
           </span>

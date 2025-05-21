@@ -69,7 +69,7 @@ function DesktopNav({ isScrolled, minimal }: { isScrolled?: boolean; minimal?: b
 
 function MainNav({ isScrolled, setIsMenuOpen }: NavProps) {
   return (
-    <nav className="relative z-50 transition-all duration-500 bg-gradient-to-r from-blue-700/25 dark:from-blue-950/75 via-yellow-700/25 dark:via-yellow-950/75 to-purple-700/25 dark:to-purple-950/75 backdrop-blur-sm h-32">
+    <nav className="relative z-[200] transition-all duration-500 bg-gradient-to-r from-blue-300/50 dark:from-blue-950/75 via-yellow-400/50 dark:via-yellow-950/75 to-purple-400/50 dark:to-purple-950/75 backdrop-blur-sm h-32">
       <div className="h-full">
         <MobileMenuButton onClick={() => setIsMenuOpen(true)} minimal/>
         
@@ -85,7 +85,7 @@ function MainNav({ isScrolled, setIsMenuOpen }: NavProps) {
 
 function MiniNav({ isScrolled, setIsMenuOpen }: NavProps) {
   return (
-    <div className={`fixed top-0 left-0 right-0 z-50 bg-white/75 dark:bg-black/25 backdrop-blur-md border-b border-gray-200 dark:border-white/25 transition-all duration-300 ${
+    <div className={`fixed top-0 left-0 right-0 z-[200] bg-gradient-to-r from-blue-300/50 dark:from-blue-950/75 via-yellow-400/50 dark:via-yellow-950/75 to-purple-400/50 dark:to-purple-950/75 backdrop-blur-md border-b border-gray-200 dark:border-white/25 transition-all duration-300 ${
       isScrolled ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-full'
     }`}>
       <div className="container mx-auto px-4 h-12 flex items-center justify-between">
@@ -142,7 +142,7 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
     <>
       {/* Backdrop */}
       <div
-        className={`fixed inset-0 bg-black/50 backdrop-blur-sm transition-opacity duration-300 z-50 ${
+        className={`fixed inset-0 bg-black/50 backdrop-blur-sm transition-opacity duration-300 z-[200] ${
           isOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'
         }`}
         onClick={onClose}
@@ -150,7 +150,7 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
 
       {/* Slide-out Menu */}
       <div
-        className={`fixed top-0 right-0 h-full w-64 bg-white/95 dark:invert backdrop-blur-sm shadow-lg z-50 transition-transform duration-300 ${
+        className={`fixed top-0 right-0 h-full w-64 bg-white/95 dark:invert backdrop-blur-sm shadow-lg z-[300] transition-transform duration-300 ${
           isOpen ? 'translate-x-0' : 'translate-x-full'
         }`}
       >

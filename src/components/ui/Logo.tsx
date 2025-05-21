@@ -27,7 +27,7 @@ export default function Logo({
   }[size];
 
   return (
-    <div className={`flex items-center gap-2 ${className} dark:grayscale dark:invert`}>
+    <div className={`flex items-center gap-2 ${className} dark:grayscale dark:invert dark:brightness-25 brightness:125`}>
       <div className={`${imageSizeClass} flex items-center justify-center relative`}>
         <Image 
           src="/images/logo.png" 
