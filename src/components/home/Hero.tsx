@@ -16,7 +16,7 @@ export default function Hero() {
       
       {/* Decorative Elements */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-transparent via-black/20 to-black/60" />
-      <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-white to-transparent dark:from-black dark:to-transparent" />
+      <div className="absolute bottom-0 left-0 w-full h-full bg-gradient-to-t from-white to-transparent dark:from-black dark:to-transparent" />
       <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-white via-white/50 to-transparent dark:from-black dark:to-transparent" />
 
       {/* Content */}

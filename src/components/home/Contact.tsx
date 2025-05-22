@@ -14,11 +14,40 @@ export default function Contact() {
     preferredContact: 'email',
     projectTimeline: ''
   });
+  const [formStatus, setFormStatus] = useState(''); // To display messages like "Sending...", "Email sent!", "Error"
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission
-    console.log('Form submitted:', formData);
+    setFormStatus('Sending...');
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        setFormStatus('Email sent successfully!');
+        setFormData({ // Reset form
+          name: '',
+          email: '',
+          phone: '',
+          service: '',
+          message: '',
+          preferredContact: 'email',
+          projectTimeline: ''
+        });
+      } else {
+        const errorData = await response.json();
+        setFormStatus(`Error: ${errorData.message || 'Failed to send email.'}`);
+      }
+    } catch (error) {
+      console.error('Submission error:', error);
+      setFormStatus('Error: Could not connect to the server.');
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -247,10 +276,16 @@ export default function Contact() {
 
               <button
                 type="submit"
-                className="w-full px-6 py-3 bg-emerald-600 text-white rounded-lg font-semibold hover:bg-emerald-700 transition-colors"
+                disabled={formStatus === 'Sending...'}
+                className="w-full px-6 py-3 bg-emerald-600 text-white rounded-lg font-semibold hover:bg-emerald-700 transition-colors disabled:opacity-50"
               >
-                Send Message
+                {formStatus === 'Sending...' ? 'Sending...' : 'Send Message'}
               </button>
+              {formStatus && (
+                <p className={`mt-4 text-sm ${formStatus.startsWith('Error') ? 'text-red-500' : 'text-green-500'}`}>
+                  {formStatus}
+                </p>
+              )}
             </form>
           </div>
         </div>

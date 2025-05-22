@@ -51,8 +51,8 @@ function LogoContainer({ children, isScrolled }: { children: React.ReactNode; is
 
 function DesktopNav({ isScrolled, minimal }: { isScrolled?: boolean; minimal?: boolean }) {
     const baseClasses = "hidden lg:flex w-full justify-center space-x-8";
-  const fullNavClasses = `${baseClasses} bg-white/75 dark:bg-black/75 backdrop-blur-sm py-1 transition-all duration-300 ${
-    isScrolled ? 'opacity-0 -translate-y-20' : 'opacity-100'
+  const fullNavClasses = `${baseClasses} bg-white/75 dark:bg-black/75 z-50 py-1 transition-all duration-300 ${
+    isScrolled ? 'opacity-0 -translate-y-20' : 'opacity-100 '
   }`;
 
 

@@ -22,11 +22,11 @@ export interface Service {
 export const SERVICES: Service[] = [
   {
     title: "Concrete Work",
-    description: "Professional concrete installation and repair services for driveways, patios, and foundations",
+    description: "Professional concrete installation and repair, specializing in exterior applications like driveways, patios, walkways, and foundations.",
     icon: GiConcreteBag,
     iconClassName: "text-red-800",
     category: "construction",
-    features: ["Driveway Installation", "Patio Construction", "Foundation Work", "Concrete Repair"],
+    features: ["Driveway Installation", "Patio Construction", "Walkways", "Foundation Work", "Concrete Repair", "Exterior Concrete Projects"],
     estimatedTime: "2-5 days",
     slug: "concrete-work",
     imageUrl: "/images/gallery/IMG_0309.jpeg",
@@ -46,11 +46,11 @@ export const SERVICES: Service[] = [
   },
   {
     title: "Fencing Solutions",
-    description: "Custom fencing installation and repair for residential and commercial properties",
+    description: "Custom fencing installation and repair, with a focus on durable concrete fencing for residential and commercial properties.",
     icon: LuFence,
     iconClassName: "text-yellow-700",
     category: "construction",
-    features: ["Wood Fencing", "Metal Fencing", "Privacy Fencing", "Garden Fencing"],
+    features: ["Concrete Fencing", "Wood Fencing", "Metal Fencing", "Privacy Fencing", "Security Fencing"],
     estimatedTime: "1-3 days",
     slug: "fencing-solutions",
     imageUrl: "/images/gallery/IMG_6340.jpeg",
@@ -69,40 +69,40 @@ export const SERVICES: Service[] = [
     ]
   },
   {
-    title: "House Renovations",
-    description: "Complete home renovation and remodeling services to transform your living space",
+    title: "Exterior Renovations",
+    description: "Specialized exterior renovation services to enhance your home\'s curb appeal, functionality, and value. EXTERIOR ONLY.",
     icon: IoHammerOutline,
     iconClassName: "text-blue-600",
     category: "renovation",
-    features: ["Kitchen Remodeling", "Bathroom Renovation", "Room Additions", "Interior Updates", "Exterior Renovation"],
+    features: ["Siding Replacement", "Window and Door Upgrades", "Roofing Repairs", "Gutter Installation", "Exterior Painting", "Facade Updates"],
     estimatedTime: "Varies by project",
-    slug: "house-renovations",
+    slug: "exterior-renovations",
     imageUrl: "/images/gallery/IMG_1550.jpeg",
-    longDescription: "Our comprehensive renovation services transform your house into the home of your dreams. We handle everything from kitchen remodels to full home renovations with meticulous attention to detail.",
+    longDescription: "Our exterior renovation services focus solely on transforming the outside of your home. From siding and roofing to windows and doors, we provide expert craftsmanship to boost your home\'s appearance and durability. EXTERIOR ONLY.",
     benefits: [
-      "Increased home value",
-      "Modern functionality",
-      "Custom design solutions",
-      "Professional project management"
+      "Significantly enhanced curb appeal",
+      "Increased property value and protection",
+      "Improved energy efficiency (with window/door upgrades)",
+      "Updated and modern exterior aesthetics"
     ],
     process: [
-      "Initial consultation and design planning",
-      "Detailed project proposal",
-      "Professional renovation execution",
-      "Quality assurance and final walkthrough"
+      "Exterior assessment and design consultation",
+      "Material selection for durability and aesthetics",
+      "Professional exterior renovation and installation",
+      "Final inspection and quality assurance"
     ]
   },
   {
-    title: "Landscaping",
-    description: "Professional landscape design and maintenance services for beautiful outdoor spaces",
+    title: "Landscaping & Yard Solutions",
+    description: "Comprehensive landscape design, full yard transformations, and maintenance, including sprinkler system installation and repair.",
     icon: FcLandscape,
     iconClassName: "",
     category: "landscaping",
-    features: ["Garden Design", "Lawn Maintenance", "Irrigation Systems", "Outdoor Lighting"],
+    features: ["Full Yard Landscaping", "Sprinkler Installation & Repair", "Garden Design", "Lawn Maintenance", "Irrigation Systems", "Outdoor Lighting"],
     estimatedTime: "1-2 weeks",
-    slug: "landscaping",
+    slug: "landscaping-yard-solutions",
     imageUrl: "/images/gallery/IMG_0217.jpeg",
-    longDescription: "Create your perfect outdoor oasis with our comprehensive landscaping services. We combine artistic vision with horticultural expertise to design and maintain beautiful, functional outdoor spaces.",
+    longDescription: "Create your perfect outdoor oasis with our comprehensive landscaping and yard solutions. We specialize in full yard transformations, including expert sprinkler system installation and repair, combining artistic vision with horticultural expertise to design and maintain beautiful, functional outdoor spaces.",
     benefits: [
       "Enhanced curb appeal",
       "Increased property value",

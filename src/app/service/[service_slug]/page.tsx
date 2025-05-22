@@ -3,6 +3,7 @@
 import { SERVICES } from '@/types/services';
 import { notFound, useRouter } from 'next/navigation';
 import { use } from 'react';
+import Hero from '@/components/Hero';
 
 interface PageProps {
   params: Promise<{
@@ -22,19 +23,11 @@ export default function ServicePage({ params: paramsPromise }: PageProps) {
   return (
     <main className="min-h-screen bg-white dark:bg-black">
       {/* Hero Section */}
-      <section className="relative py-20 bg-gray-100 dark:bg-neutral-900">
-        <div className="absolute inset-0 bg-gray-900/30 dark:bg-black/50 z-10" />
-        <div className="relative z-20 container mx-auto px-4">
-          <div className="max-w-3xl mx-auto text-center">
-            <h1 className="text-5xl font-serif font-bold text-black dark:text-white mb-6">
-              {service.title}
-            </h1>
-            <p className="text-xl text-neutral-700 dark:text-neutral-300">
-              {service.description}
-            </p>
-          </div>
-        </div>
-      </section>
+      <Hero 
+        bgImageSrc={service.imageUrl}
+        title={service.title} 
+        description={service.description} 
+      />
 
       {/* Back Button */}
       <section className="py-4 bg-white dark:bg-black">
