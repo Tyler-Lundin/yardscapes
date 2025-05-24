@@ -39,7 +39,6 @@ export default function GalleryModal({ image, onClose }: GalleryModalProps) {
             alt={image.alt}
             fill
             className="object-contain"
-            priority
           />
         </div>
 
