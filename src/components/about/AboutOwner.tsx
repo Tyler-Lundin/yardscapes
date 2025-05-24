@@ -11,7 +11,7 @@ export default function AboutOwner() {
           <div className="relative">
             <div className="relative h-[700px] rounded-2xl overflow-hidden">
               <Image
-                src={'/images/dean.png'}
+                src={'/images/dean.webp'}
                 alt={OWNER.name}
                 fill
                 className="object-cover object-top"

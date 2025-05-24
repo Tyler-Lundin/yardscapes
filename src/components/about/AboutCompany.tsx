@@ -18,7 +18,7 @@ export default function AboutCompany() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-20">
             <div className="relative h-[400px] rounded-2xl overflow-hidden">
               <Image
-                src="/images/company.jpg"
+                src="/images/company.webp"
                 alt="Yardscapes Team"
                 fill
                 className="object-cover"

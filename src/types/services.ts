@@ -29,7 +29,7 @@ export const SERVICES: Service[] = [
     features: ["Driveway Installation", "Patio Construction", "Walkways", "Foundation Work", "Concrete Repair", "Exterior Concrete Projects"],
     estimatedTime: "2-5 days",
     slug: "concrete-work",
-    imageUrl: "/images/gallery/IMG_0309.jpeg",
+    imageUrl: "/images/gallery/IMG_0309.webp",
     longDescription: "Our concrete work services combine technical expertise with artistic vision to create durable, beautiful surfaces that enhance your property's value and functionality. From driveways to patios, we ensure every project meets the highest standards of quality and craftsmanship.",
     benefits: [
       "Increased property value",
@@ -53,7 +53,7 @@ export const SERVICES: Service[] = [
     features: ["Concrete Fencing", "Wood Fencing", "Metal Fencing", "Privacy Fencing", "Security Fencing"],
     estimatedTime: "1-3 days",
     slug: "fencing-solutions",
-    imageUrl: "/images/gallery/IMG_6340.jpeg",
+    imageUrl: "/images/gallery/IMG_6340.webp",
     longDescription: "Transform your property with our custom fencing solutions. We offer a wide range of materials and styles to create the perfect balance of security, privacy, and aesthetic appeal for your space.",
     benefits: [
       "Enhanced privacy and security",
@@ -77,7 +77,7 @@ export const SERVICES: Service[] = [
     features: ["Siding Replacement", "Window and Door Upgrades", "Roofing Repairs", "Gutter Installation", "Exterior Painting", "Facade Updates"],
     estimatedTime: "Varies by project",
     slug: "exterior-renovations",
-    imageUrl: "/images/gallery/IMG_1550.jpeg",
+    imageUrl: "/images/gallery/IMG_1550.webp",
     longDescription: "Our exterior renovation services focus solely on transforming the outside of your home. From siding and roofing to windows and doors, we provide expert craftsmanship to boost your home\'s appearance and durability. EXTERIOR ONLY.",
     benefits: [
       "Significantly enhanced curb appeal",
@@ -101,7 +101,7 @@ export const SERVICES: Service[] = [
     features: ["Full Yard Landscaping", "Sprinkler Installation & Repair", "Garden Design", "Lawn Maintenance", "Irrigation Systems", "Outdoor Lighting"],
     estimatedTime: "1-2 weeks",
     slug: "landscaping-yard-solutions",
-    imageUrl: "/images/gallery/IMG_0217.jpeg",
+    imageUrl: "/images/gallery/IMG_0217.webp",
     longDescription: "Create your perfect outdoor oasis with our comprehensive landscaping and yard solutions. We specialize in full yard transformations, including expert sprinkler system installation and repair, combining artistic vision with horticultural expertise to design and maintain beautiful, functional outdoor spaces.",
     benefits: [
       "Enhanced curb appeal",
@@ -125,7 +125,7 @@ export const SERVICES: Service[] = [
     features: ["Wood Decks", "Composite Decks", "Patio Design", "Outdoor Kitchens"],
     estimatedTime: "1-2 weeks",
     slug: "deck-patio",
-    imageUrl: "/images/gallery/IMG_9897.jpeg",
+    imageUrl: "/images/gallery/IMG_9897.webp",
     longDescription: "Extend your living space outdoors with our custom deck and patio solutions. We create beautiful, functional outdoor areas that perfectly complement your home's architecture and your lifestyle.",
     benefits: [
       "Expanded living space",

@@ -69,7 +69,7 @@ function DesktopNav({ isScrolled, minimal }: { isScrolled?: boolean; minimal?: b
 
 function MainNav({ isScrolled, setIsMenuOpen }: NavProps) {
   return (
-    <nav className="relative z-[200] transition-all duration-500 bg-gradient-to-r from-blue-300/50 dark:from-blue-950/75 via-yellow-400/50 dark:via-yellow-950/75 to-purple-400/50 dark:to-purple-950/75 backdrop-blur-sm h-32">
+    <nav className="relative z-[200] transition-all duration-500 bg-gradient-to-r from-blue-300/50 dark:from-blue-950/75 via-yellow-400/50 dark:via-yellow-950/75 to-blue-400/50 dark:to-blue-950/75 backdrop-blur-sm h-32">
       <div className="h-full">
         <MobileMenuButton onClick={() => setIsMenuOpen(true)} minimal/>
         
@@ -85,7 +85,7 @@ function MainNav({ isScrolled, setIsMenuOpen }: NavProps) {
 
 function MiniNav({ isScrolled, setIsMenuOpen }: NavProps) {
   return (
-    <div className={`fixed top-0 left-0 right-0 z-[200] bg-gradient-to-r from-blue-300/50 dark:from-blue-950/75 via-yellow-400/50 dark:via-yellow-950/75 to-purple-400/50 dark:to-purple-950/75 backdrop-blur-md shadow-md transition-all duration-300 ${
+    <div className={`fixed top-0 left-0 right-0 z-[200] bg-gradient-to-r from-blue-300/50 dark:from-blue-950/75 via-yellow-400/50 dark:via-yellow-950/75 to-blue-400/50 dark:to-blue-950/75 backdrop-blur-md shadow-md transition-all duration-300 ${
       isScrolled ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-full'
     }`}>
       <div className="container mx-auto px-4 h-12 flex items-center justify-between">

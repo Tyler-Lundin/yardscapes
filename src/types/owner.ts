@@ -34,5 +34,5 @@ export const OWNER: Owner = {
         "National Association of Landscape Professionals",
         "Sustainable Landscape Management"
     ],
-    image: "/images/dean.png"
+    image: "/images/dean.webp"
 }

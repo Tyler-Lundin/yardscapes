@@ -30,7 +30,7 @@ export default function Logo({
     <div className={`flex items-center gap-2 ${className} dark:grayscale dark:invert dark:brightness-25 brightness:125`}>
       <div className={`${imageSizeClass} flex items-center justify-center relative`}>
         <Image 
-          src="/images/logo.png" 
+          src="/images/logo.webp" 
           alt="YardScapes Logo"
           width={100}
           height={100}

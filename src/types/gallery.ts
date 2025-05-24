@@ -38,7 +38,7 @@ export const GALLERY_IMAGES = [
   {
     id: '2',
     order: 0,
-    src: '/images/gallery/IMG_1445.jpeg',
+    src: '/images/gallery/IMG_1445.webp',
     alt: 'Newly installed fence securing a residential property',
     category: 'fences',
     title: 'Secure Wooden Fencing',
@@ -48,7 +48,7 @@ export const GALLERY_IMAGES = [
   {
     id: '7',
     order: 1,
-    src: '/images/gallery/IMG_9897.jpeg',
+    src: '/images/gallery/IMG_9897.webp',
     alt: 'Wooden deck undergoing professional repair and restoration',
     category: 'deck-patio',
     title: 'Professional Deck Restoration',
@@ -58,7 +58,7 @@ export const GALLERY_IMAGES = [
   {
     id: '5',
     order: 2,
-    src: '/images/gallery/IMG_6340.jpeg',
+    src: '/images/gallery/IMG_6340.webp',
     alt: 'Tall wooden privacy fence providing seclusion for a backyard',
     category: 'fences',
     title: 'Enhanced Backyard Privacy',
@@ -67,7 +67,7 @@ export const GALLERY_IMAGES = [
   {
     id: '6',
     order: 3,
-    src: '/images/gallery/IMG_6343.jpeg',
+    src: '/images/gallery/IMG_6343.webp',
     alt: 'Close-up of a sturdy wooden privacy fence panel and post',
     category: 'fences',
     title: 'Durable Privacy Fencing Detail',
@@ -77,7 +77,7 @@ export const GALLERY_IMAGES = [
   {
     id: '11',
     order: 4,
-    src: '/images/gallery/IMG_0309.jpeg',
+    src: '/images/gallery/IMG_0309.webp',
     alt: 'Concrete Patio With Surrounding Brick Walls',
     category: 'concrete-work',
     title: 'Concrete Patio with Brick Walls',
@@ -88,7 +88,7 @@ export const GALLERY_IMAGES = [
   {
     id: '4',
     order: 5,
-    src: '/images/gallery/IMG_1550.jpeg',
+    src: '/images/gallery/IMG_1550.webp',
     alt: 'Modern house with new siding installation in a neutral tone',
     category: 'house-renovations',
     title: 'Modern Siding Installation',
@@ -99,7 +99,7 @@ export const GALLERY_IMAGES = [
   {
     id: '1',
     order: 6,
-    src: '/images/gallery/IMG_0114.jpeg',
+    src: '/images/gallery/IMG_0114.webp',
     alt: 'Backhoe performing excavation work for a landscaping project',
     category: 'equipment',
     title: 'Heavy Duty Foundation Work',
@@ -108,7 +108,7 @@ export const GALLERY_IMAGES = [
   {
     id: '8',
     order: 7,
-    src: '/images/gallery/IMG_0310.jpeg',
+    src: '/images/gallery/IMG_0310.webp',
     alt: 'Metal Fence Installation',
     category: 'fences',
     title: 'Metal Fence Installation',
@@ -118,7 +118,7 @@ export const GALLERY_IMAGES = [
   {
     id: '9',
     order: 8,
-    src: '/images/gallery/IMG_0396.jpeg',
+    src: '/images/gallery/IMG_0396.webp',
     alt: 'Pickleball Court Installation',
     category: 'concrete-work',
     title: 'Concrete Work for Pickleball Court',
@@ -128,7 +128,7 @@ export const GALLERY_IMAGES = [
   {
     id: '10',
     order: 9,
-    src: '/images/gallery/IMG_0308.jpeg',
+    src: '/images/gallery/IMG_0308.webp',
     alt: 'Concrete Patio With Surrounding Brick Walls',
     category: 'concrete-work',
     title: 'Concrete Patio with Brick Walls',
@@ -138,7 +138,7 @@ export const GALLERY_IMAGES = [
   // {
   //   id: '3',
   //   order: 10,
-  //   src: '/images/gallery/IMG_1549.jpeg',
+  //   src: '/images/gallery/IMG_1549.webp',
   //   alt: 'Artistically laid paver patio creating an elegant outdoor space',
   //   category: 'pavers',
   //   title: 'Elegant Paver Patio',
@@ -148,7 +148,7 @@ export const GALLERY_IMAGES = [
   {
     id: '12',
     order: 11,
-    src: '/images/gallery/IMG_0307.jpeg',
+    src: '/images/gallery/IMG_0307.webp',
     alt: 'Concrete Patio With Surrounding Brick Walls',
     category: 'concrete-work',
     title: 'Concrete Patio with Brick Walls',
@@ -158,7 +158,7 @@ export const GALLERY_IMAGES = [
   {
     id: '13',
     order: 12,
-    src: '/images/gallery/IMG_0217.jpeg',
+    src: '/images/gallery/IMG_0217.webp',
     alt: 'Pool Pavers',
     category: 'pavers',
     title: 'Pool Pavers',

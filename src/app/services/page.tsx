@@ -15,7 +15,7 @@ export default function ServicesPage() {
       <Hero 
         title="Our Services"
         description="Discover our comprehensive range of landscaping and construction services, designed to transform your outdoor space into something extraordinary."
-        bgImageSrc="/images/textures/brick-texture.jpg"
+        bgImageSrc="/images/textures/brick-texture.webp"
       />
 
       <section className="py-12 md:py-20 bg-white dark:bg-black ">
