@@ -69,7 +69,7 @@ function DesktopNav({ isScrolled, minimal }: { isScrolled?: boolean; minimal?: b
 
 function MainNav({ isScrolled, setIsMenuOpen }: NavProps) {
   return (
-    <nav className="relative z-[200] transition-all duration-500 bg-gradient-to-r from-blue-300/50 dark:from-blue-950/75 via-yellow-400/50 dark:via-yellow-950/75 to-blue-400/50 dark:to-blue-950/75 backdrop-blur-sm h-32">
+    <nav className="relative z-[200] transition-all duration-500 bg-gradient-to-r from-blue-300/50 dark:from-blue-950/75 via-yellow-400/50 dark:via-yellow-800/75 to-blue-400/50 dark:to-blue-950/75 backdrop-blur-sm h-32">
       <div className="h-full">
         <MobileMenuButton onClick={() => setIsMenuOpen(true)} minimal/>
         

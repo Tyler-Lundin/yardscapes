@@ -12,7 +12,7 @@ export default function Hero() {
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: 'url(/images/hero.webp)' }}
       />
-      <div className="absolute inset-0 bg-gradient-to-r from-white via-white/25 to-white dark:from-black dark:via-black/25 dark:to-black" />
+      <div className="absolute inset-0 bg-gradient-to-r from-white via-white/25 to-white dark:from-black dark:via-black/25 dark:to-black z-50" />
       
       {/* Decorative Elements */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-transparent via-black/20 to-black/60" />
@@ -47,7 +47,7 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
             className="flex flex-col sm:flex-row gap-4 justify-center items-center z-25"
           >
-            <button onClick={() => router.push('/contact')} className="group w-full sm:w-auto relative bg-green-400 text-white hover:bg-green-500 px-8 py-4 rounded-lg font-medium text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-2xl">
+            <button onClick={() => router.push('/contact')} className="group w-full sm:w-auto relative bg-green-400 text-black hover:bg-green-500 px-8 py-4 rounded-lg font-medium text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-2xl">
               <span className="relative z-10">Get a Free Quote</span>
               <div className="absolute inset-0 bg-gradient-to-r from-green-400/20 to-green-600/20 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             </button>
